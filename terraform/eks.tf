@@ -39,7 +39,7 @@ module "eks" {
             before_compute = true
         }
 
-        endpoint_public_access = false
+        #endpoint_public_access = false
         enable_cluster_creator_admin_permissions = true
         vpc_id = module.vpc.vpc_id
         subnet_ids = module.vpc.private_subnets
