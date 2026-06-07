@@ -18,7 +18,7 @@ resource "aws_security_group" "bastion_sg" {
     name = "bastion-sg"
     vpc_id = module.vpc.vpc_id
 
-    ingress = {
+    ingress {
         description = "SSH from my IP"
         from_port = 22
         to_port = 22
@@ -26,7 +26,7 @@ resource "aws_security_group" "bastion_sg" {
         cidr_blocks = ["${chomp(data.http.my_ip.response_body)}/32"]
     }
 
-    egress = {
+    egress {
         from_port = 0
         to_port = 0
         protocol = "-1"
