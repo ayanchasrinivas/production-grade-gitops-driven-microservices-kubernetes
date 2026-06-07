@@ -22,6 +22,8 @@ resource "aws_security_group" "add_sg_eks" {
     }
 }
 
+# Here we are fetching the module from the official terraform registery.
+
 module "eks" {
     source = "terraform-aws-module/eks/aws"
     version = "~> 21.0"
