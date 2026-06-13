@@ -2,6 +2,10 @@ data "http" "my_ip" {
     url = "https://checkip.amazonaws.com/"
 }
 
+data "aws_regions" "all" {
+    all_regions = true
+}
+
 data "aws_ami" "ubuntu" {
     most_recent = true
     filter {
